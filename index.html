@@ -169,11 +169,9 @@
         methods: {
           // Método para agregar una nueva tarea
           addTask() {
-            // Se valida que el input no esté vacío (trim() elimina espacios en blanco)
             if (this.newTask.trim() === "") {
-              return; // Si está vacío, no se hace nada
+              return;
             }
-
             // Se crea un nuevo objeto de tarea
             const newTaskObject = {
               id: Date.now(), // Se usa Date.now() para un ID único
@@ -186,8 +184,7 @@
           toggleTask(task) {
             task.completed = !task.completed;
           },
-
-          // Método para eliminar una tarea
+          //Eliminar una tarea
           deleteTask(taskId) {
             this.tasks = this.tasks.filter((task) => task.id !== taskId);
           },
